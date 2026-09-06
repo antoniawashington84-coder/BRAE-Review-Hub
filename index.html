@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="BRAE private book review and catalog management hub" />
+  <title>BRAE Review Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="login" class="login-shell">
+    <section class="login-art" aria-label="BRAE Review Hub introduction">
+      <div class="brand-mark" aria-label="B.R.A.E."><span>B.</span><span>R.</span><span>A.</span><span>E.</span></div>
+      <div><p class="eyebrow">BLACK READERS APPRECIATION EVENT</p><h1>Every book deserves<br>a proper review.</h1><p>One private workspace for clean decisions, organized catalogs, and a smooth event launch.</p></div>
+      <p class="login-foot">2026 EVENT · INTERNAL USE ONLY</p>
+    </section>
+    <section class="login-panel">
+      <form id="loginForm" class="login-card">
+        <span class="mini-logo"><b>B.</b><b>R.</b><b>A.</b><b>E.</b></span><h2>Welcome back</h2><p>Sign in to continue to the review hub.</p>
+        <div id="loginError" class="login-error" role="alert" hidden></div>
+        <label>Email address<input id="loginEmail" type="email" autocomplete="email" required /></label>
+        <label>Password<input id="loginPassword" type="password" autocomplete="current-password" required /></label>
+        <div class="form-line"><label class="check"><input type="checkbox" checked /> Remember me</label><button type="button" class="link-btn">Forgot password?</button></div>
+        <button id="loginButton" class="primary wide" type="submit">Sign in to Review Hub</button>
+        <small>Access is limited to approved BRAE administrators.</small>
+      </form>
+    </section>
+  </div>
+
+  <div id="app" class="app-shell" hidden>
+    <aside class="sidebar">
+      <div class="side-brand"><span class="brand-mark small" aria-label="B.R.A.E."><span>B.</span><span>R.</span><span>A.</span><span>E.</span></span><div><strong>B.R.A.E.</strong><small>REVIEW HUB</small></div></div>
+      <nav id="nav" aria-label="Primary navigation"></nav>
+      <div class="side-profile"><div id="profileAvatar" class="avatar">BA</div><div><strong id="profileName">BRAE Admin</strong><small id="profileRole">Reviewer</small></div><button id="logout" title="Log out">↗</button></div>
+    </aside>
+    <main>
+      <header class="topbar"><button id="menuBtn" class="icon-btn" aria-label="Open menu">☰</button><div><p class="eyebrow">CURRENT EVENT</p><strong>BRAE 2026 Reader Event</strong></div><div class="top-actions"><button class="icon-btn" aria-label="Notifications">●</button><button id="quickReview" class="primary">Review next book</button></div></header>
+      <div id="view" tabindex="-1"></div>
+    </main>
+  </div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <div id="modalRoot"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
